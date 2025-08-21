@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Motivacional - Programación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .code-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            overflow: hidden;
+            color: #00ff00;
+            font-size: 12px;
+            line-height: 1.2;
+            white-space: pre;
+            z-index: 0;
+            animation: matrix 20s linear infinite;
+        }
+
+        @keyframes matrix {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .json-structure {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.8;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .key {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #00ff88;
+        }
+
+        .number {
+            color: #ff6b35;
+        }
+
+        .boolean {
+            color: #ff9500;
+        }
+
+        .bracket {
+            color: #ffff00;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .motivational-text {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            text-align: justify;
+            padding: 10px 0;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { filter: brightness(1) drop-shadow(0 0 5px rgba(0, 255, 136, 0.3)); }
+            100% { filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 136, 0.6)); }
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+            color: #00ff88;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .icon {
+            position: absolute;
+            color: #00ff88;
+            opacity: 0.2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+        .icon:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+        .icon:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 3s; }
+        .icon:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+        .icon:nth-child(6) { top: 70%; right: 5%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .line-numbers {
+            color: #666;
+            margin-right: 20px;
+            user-select: none;
+        }
+
+        .code-line {
+            display: flex;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="code-background">
+function success() {
+  return dreams.map(dream => {
+    return dream.execute();
+  }).filter(result => result.achieved);
+}
+
+class Developer {
+  constructor() {
+    this.passion = true;
+    this.dedication = Infinity;
+  }
+  
+  learn(technology) {
+    this.skills.push(technology);
+    return this.grow();
+  }
+}
+
+const journey = new Promise((resolve, reject) => {
+  const effort = setInterval(() => {
+    if (hardWork && persistence) {
+      resolve('Success achieved!');
+    }
+  }, 1);
+});
+    </div>
+
+    <div class="floating-icons">
+        <div class="icon">{ }</div>
+        <div class="icon">< /></div>
+        <div class="icon">&&</div>
+        <div class="icon">=></div>
+        <div class="icon">++</div>
+        <div class="icon">||</div>
+    </div>
+
+    <div class="container">
+        <div class="json-structure">
+            <div class="code-line">
+                <span class="line-numbers">01</span>
+                <span class="bracket">{</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">02</span>
+                <span>&nbsp;&nbsp;<span class="key">"desarrollador"</span>: <span class="bracket">{</span></span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">03</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"nombre"</span>: <span class="string">"Candidato Motivado"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">04</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"nivel_experiencia"</span>: <span class="string">"junior"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">05</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"disposicion_aprender"</span>: <span class="boolean">true</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">06</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"capacidad_adaptacion"</span>: <span class="number">100</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">07</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"punto_partida"</span>: <span class="string">"aquí y ahora"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">08</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"mensaje"</span>: <span class="string">"</span></span>
+            </div>
+            <div class="motivational-text">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si llegaste hasta aquí, quiero que sepas que tengo la<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disposición y la capacidad de aprender para asumir<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cualquier reto que me propongas. Todos hemos comenzado<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desde algún punto, y este es el mío. Gracias por<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dedicar tiempo a revisar mi hoja de vida; espero tener<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;la oportunidad de aportar, crecer y alcanzar juntos<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;los objetivos que buscamos.
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">15</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">16</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"habilidades"</span>: <span class="bracket">[</span></span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">17</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"resolución de problemas"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">18</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"trabajo en equipo"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">19</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"aprendizaje continuo"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">20</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"perseverancia"</span></span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">21</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="bracket">]</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">22</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"objetivo"</span>: <span class="string">"crecer profesionalmente juntos"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">23</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"actitud"</span>: <span class="string">"proactiva"</span>,</span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">24</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"ready_to_code"</span>: <span class="boolean">true</span></span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">25</span>
+                <span>&nbsp;&nbsp;<span class="bracket">}</span></span>
+            </div>
+            <div class="code-line">
+                <span class="line-numbers">26</span>
+                <span class="bracket">}</span><span class="cursor">|</span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
